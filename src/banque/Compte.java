@@ -1,7 +1,7 @@
 package banque;
 
 public class Compte {
-	private int solde = 0;
+	protected int solde = 0;
 	
 	public static void main (String args[])
 	{
