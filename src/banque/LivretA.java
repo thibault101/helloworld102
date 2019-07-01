@@ -3,6 +3,12 @@ package banque;
 public class LivretA extends Compte
 {
 	
+	
+	public void checkRetrait(int somme) {
+		if(this.getSolde()-somme < 0)
+			throw new IllegalArgumentException("Solde insuffisant");
+	}
+	
 	public static void main(String args[])
 	{
 		LivretA la1 = new LivretA();
@@ -17,15 +23,14 @@ public class LivretA extends Compte
 	@Override
 	public int retirer(int somme)
 	{
-		if(this.getSolde()-somme < 0)
-			throw new IllegalArgumentException("Solde insuffisant");
+		this.checkRetrait(somme);
 		return this.solde -= somme;
 	}
 	
 	@Override
 	public int virer(int somme, Compte compteDestination)
 	{
-		this.retirer(somme);
+		this.checkRetrait(somme);
 		compteDestination.deposer(somme);
 		
 		return somme;
