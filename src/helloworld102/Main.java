@@ -4,9 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
-
-
 public class Main {
 
 	public static void main(String args[]) {
@@ -15,7 +12,8 @@ public class Main {
 		{
 			String name = sb.readLine();
 			System.out.println("hello " + name+"!");
-		}catch (IOException e) {
+		}catch (IOException e)
+		{
 			System.err.println("une erreur s'est produite");
 		}
 	}
