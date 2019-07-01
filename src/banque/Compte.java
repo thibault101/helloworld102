@@ -3,25 +3,21 @@ package banque;
 public class Compte {
 	private int solde = 0;
 	
-	public void main()
-	{
-		
-	}
 	
 	public void deposer(int somme)
 	{
-		this.setSolde(this.getSolde()+somme);
+		this.solde+=solde;
 	}
 	
-	public void retirer(int somme)
+	public int retirer(int somme)
 	{
-		this.setSolde(this.getSolde()-somme);
+		 return this.solde-=somme;
 	}
 	
 	public int virer(int somme, Compte compteDestination)
 	{
-		this.setSolde(this.getSolde()-somme);
-		compteDestination.setSolde(compteDestination.getSolde()+somme);
+		this.retirer(somme);
+		compteDestination.deposer(somme);
 		
 		return somme;
 	}
