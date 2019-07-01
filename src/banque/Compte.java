@@ -1,7 +1,7 @@
 package banque;
 
 public class Compte {
-	private int solde;
+	private int solde = 0;
 	
 	public void main()
 	{
@@ -10,18 +10,18 @@ public class Compte {
 	
 	public void deposer(int somme)
 	{
-		this.solde+= somme;
+		this.setSolde(this.getSolde()+somme);
 	}
 	
 	public void retirer(int somme)
 	{
-		this.solde-=somme;
+		this.setSolde(this.getSolde()-somme);
 	}
 	
 	public int virer(int somme, Compte compteDestination)
 	{
-		this.solde-= somme;
-		compteDestination.solde+= somme;
+		this.setSolde(this.getSolde()-somme);
+		compteDestination.setSolde(compteDestination.getSolde()+somme);
 		
 		return somme;
 	}
