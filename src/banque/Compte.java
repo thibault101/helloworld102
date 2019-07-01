@@ -22,6 +22,11 @@ public class Compte {
 		return somme;
 	}
 	
+	@Override public String toString()
+	{
+		return "Solde: "+solde;
+	}
+	
 	public int getSolde()
 	{
 		return this.solde;
