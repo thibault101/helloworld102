@@ -16,4 +16,12 @@ public class LivretA extends Compte
 		return getSolde();
 	}
 	
+	@Override
+	public int virer(int somme, Compte compteDestination)
+	{
+		this.retirer(somme);
+		compteDestination.deposer(somme);
+		
+		return somme;
+	}
 }
