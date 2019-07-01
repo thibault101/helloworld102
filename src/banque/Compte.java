@@ -8,6 +8,24 @@ public class Compte {
 		
 	}
 	
+	public void deposer(int somme)
+	{
+		this.solde+= somme;
+	}
+	
+	public void retirer(int somme)
+	{
+		this.solde-=somme;
+	}
+	
+	public int virer(int somme, Compte compteDestination)
+	{
+		this.solde-= somme;
+		compteDestination.solde+= somme;
+		
+		return somme;
+	}
+	
 	public int getSolde()
 	{
 		return this.solde;
